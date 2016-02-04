@@ -1,0 +1,14 @@
+function where(arr, num) {
+  // Find my place in this sorted array.
+  arr = arr.sort(function(a,b){
+    return a-b;
+  });
+  for(var index = 0; index < arr.length; index++) {
+    if(arr[index]>=num){
+      return index;
+    }
+  }
+  return arr.length;
+}
+
+where([2, 5, 10], 15);

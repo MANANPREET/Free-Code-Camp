@@ -1,0 +1,23 @@
+function rot13(str) { // LBH QVQ VG!
+  var newStr ="";
+  var punctutations = "!?.,:; ";
+  for(var i=0; i<str.length; i++){
+    if (punctutations.includes(str[i])) {
+      newStr = newStr+str[i];
+    }
+    else{
+      if(str.charCodeAt(i)+13 > 90){
+        var diff = str.charCodeAt(i)+13 - 90;
+        diff = 64 + diff;
+        newStr = newStr+String.fromCharCode(diff);
+      }
+      else{
+      newStr = newStr+String.fromCharCode(str.charCodeAt(i)+13);
+      }
+    }
+  }
+  return newStr;
+}
+
+// Change the inputs below to test
+rot13("SERR PBQR PNZC");

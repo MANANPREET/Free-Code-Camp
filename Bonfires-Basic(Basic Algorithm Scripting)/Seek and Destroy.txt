@@ -1,0 +1,25 @@
+function destroyer(arr) {
+  // Remove all the values
+  var argumentLength = arguments.length;
+  var arrayOfOtherValues = [];
+  for(var i=1; i< arguments.length; i++){
+   arrayOfOtherValues.push(arguments[i]);
+  }
+  return arr.filter(functionFilter);
+  function functionFilter(value) {
+    var flag=0;
+    for(var j=0; j<arrayOfOtherValues.length; j++){
+      if(value==arrayOfOtherValues[j]){
+        flag = 1;
+      }
+    }
+    if(flag==1){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);

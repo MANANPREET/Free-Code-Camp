@@ -1,0 +1,11 @@
+function end(str, target) {
+  // "Never give up and good luck will find you."
+  // -- Falcor
+  var lengthTarget =target.length;
+  if(str.substring(str.length-lengthTarget) == target){
+    return true;
+  }
+  return false;
+}
+
+end("Bastian", "n");

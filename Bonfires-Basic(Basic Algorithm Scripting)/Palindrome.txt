@@ -1,0 +1,26 @@
+function palindrome(str) {
+  // Good luck!
+  array = [];
+  str = str.toLowerCase();
+  str = str.replace(/[^A-Z\dαινσϊδλοφόρ]/ig, '');
+  array = str.split("");
+  for(var i = 0; i < array.length; i++){
+    if(array[i]!=array[array.length-i-1]){
+      return false;
+    }
+  }
+  return true;
+}
+
+palindrome("race car");
+
+//Better approach 
+
+function palindrome(str) {
+  var cleanStr = str.replace(/[^A-Z\dαινσϊδλοφόρ]/ig, '').toLowerCase();
+  function rev(str) { return str.split('').reverse().join(''); }
+
+  return (cleanStr === rev(cleanStr));
+}
+
+palindrome("eye");

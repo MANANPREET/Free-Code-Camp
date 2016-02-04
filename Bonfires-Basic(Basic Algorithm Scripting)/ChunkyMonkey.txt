@@ -1,0 +1,22 @@
+function chunk(arr, size) {
+  // Break it up.
+  var lenArr = arr.length;
+  var newArray = [];
+  var final = [];
+  var i =0;
+  var factor = size;
+  while(size<=arr.length){
+    newArray = arr.slice(i,size);
+    final.push(newArray);
+    i=size;
+    size = factor+size;
+    if(size-arr.length<factor && size-arr.length>0){
+      newArray = arr.slice(i,arr.length);
+      final.push(newArray);
+    }
+  }
+  return final;
+  
+}
+
+chunk([0, 1, 2, 3, 4, 5], 4);
